@@ -1,0 +1,29 @@
+[
+  {
+    "id": "safe",
+    "cssClass": "safe",
+    "icon": "🏗️",
+    "name": "SAFe",
+    "tag": "Scaled Agile Framework",
+    "description": "Das umfassendste Skalierungsframework am Markt. SAFe strukturiert grosse Organisationen in Agile Release Trains (ARTs) und synchronisiert Teams ueber gemeinsame PI-Plannings.",
+    "chips": ["PI Planning", "ART", "Portfolio Mgmt", "DevSecOps"]
+  },
+  {
+    "id": "less",
+    "cssClass": "less",
+    "icon": "🪶",
+    "name": "LeSS",
+    "tag": "Large-Scale Scrum",
+    "description": "LeSS uebertraegt Scrum konsequent auf viele Teams mit minimalen Zusatzstrukturen. Ein einziger Product Backlog, ein Product Owner, ein Sprint.",
+    "chips": ["Scrum-basiert", "Lean", "Cross-functional", "Einfachheit"]
+  },
+  {
+    "id": "spotify",
+    "cssClass": "spot",
+    "icon": "🎵",
+    "name": "Spotify Model",
+    "tag": "Squad · Tribe · Chapter",
+    "description": "Bekannt durch Squads, Tribes, Chapters und Guilds: Das Spotify Model betont Autonomie und Ausrichtung gleichzeitig.",
+    "chips": ["Squads", "Tribes", "Guilds", "Autonomie"]
+  }
+]

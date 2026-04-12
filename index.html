@@ -29,7 +29,7 @@
       line-height: 1.6;
     }
 
-    /* ── NAV ── */
+    /* ── NAVIGATION ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -38,11 +38,13 @@
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { font-weight: 800; font-size: 1.1rem; color: var(--accent2); letter-spacing: -0.3px; text-decoration: none; }
+    .nav-logo {
+      font-weight: 800; font-size: 1.1rem;
+      color: var(--accent2); letter-spacing: -0.3px; text-decoration: none;
+    }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color .2s; }
     .nav-links a:hover { color: var(--text); }
-
     .nav-cta {
       padding: .5rem 1.25rem;
       background: linear-gradient(135deg, #6366f1, #818cf8);
@@ -53,65 +55,13 @@
     }
     .nav-cta:hover { opacity: .88; transform: translateY(-1px); }
 
+    /* Mobile ≤768px */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       nav { padding: .85rem 1.25rem; }
     }
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 7rem 1.5rem 5rem;
-      position: relative; overflow: hidden;
-    }
-    #hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 55% at 50% -5%, rgba(99,102,241,.22) 0%, transparent 70%),
-        radial-gradient(ellipse 45% 35% at 85% 85%, rgba(129,140,248,.09) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(99,102,241,.15);
-      border: 1px solid rgba(99,102,241,.35);
-      color: var(--accent2);
-      font-size: .75rem; font-weight: 700;
-      letter-spacing: .09em; text-transform: uppercase;
-      padding: .35rem 1rem; border-radius: 999px;
-      margin-bottom: 1.5rem;
-      opacity: 0; animation: fadeUp .55s .1s forwards;
-    }
-
-    #hero h1 {
-      font-size: clamp(2.1rem, 6vw, 4rem);
-      font-weight: 800; line-height: 1.13; letter-spacing: -1px;
-      max-width: 800px; margin-bottom: 1.25rem;
-      opacity: 0; animation: fadeUp .55s .25s forwards;
-    }
-    #hero h1 span {
-      background: linear-gradient(135deg, #a5b4fc, #6366f1);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    #hero p {
-      font-size: clamp(.95rem, 2.5vw, 1.15rem);
-      color: var(--muted); max-width: 580px;
-      margin-bottom: 2.5rem;
-      opacity: 0; animation: fadeUp .55s .4s forwards;
-    }
-
-    .hero-actions {
-      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-      opacity: 0; animation: fadeUp .55s .55s forwards;
-    }
-
+    /* ── BUTTONS ── */
     .btn-primary {
       padding: .85rem 2.1rem;
       background: linear-gradient(135deg, #6366f1, #818cf8);
@@ -126,26 +76,16 @@
 
     .btn-outline {
       padding: .85rem 2.1rem;
-      background: transparent;
-      color: var(--text);
+      background: transparent; color: var(--text);
       border: 1.5px solid var(--border);
-      border-radius: 10px;
-      font-size: 1rem; font-weight: 600;
+      border-radius: 10px; font-size: 1rem; font-weight: 600;
       text-decoration: none; cursor: pointer;
       transition: border-color .2s, transform .2s;
       display: inline-block;
     }
     .btn-outline:hover { border-color: rgba(255,255,255,.22); transform: translateY(-2px); }
 
-    .scroll-hint {
-      position: absolute; bottom: 2rem;
-      display: flex; flex-direction: column; align-items: center; gap: .4rem;
-      color: var(--muted); font-size: .75rem;
-      opacity: 0; animation: fadeUp .55s .8s forwards;
-    }
-    .scroll-hint svg { animation: bounce 1.9s ease-in-out infinite; }
-
-    /* ── SHARED SECTION ── */
+    /* ── GEMEINSAME SECTION-STYLES ── */
     section { padding: 5.5rem 1.5rem; }
     .container { max-width: 1100px; margin: 0 auto; }
     .section-label {
@@ -161,16 +101,89 @@
       max-width: 520px; margin-bottom: 3rem; line-height: 1.65;
     }
 
-    /* ── FRAMEWORKS ── */
-    #frameworks { background: var(--bg2); }
+    /* ── HERO SEKTION ── */
+    section#hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    section#hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 55% at 50% -5%, rgba(99,102,241,.22) 0%, transparent 70%),
+        radial-gradient(ellipse 45% 35% at 85% 85%, rgba(129,140,248,.09) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(99,102,241,.15);
+      border: 1px solid rgba(99,102,241,.35);
+      color: var(--accent2); font-size: .75rem; font-weight: 700;
+      letter-spacing: .09em; text-transform: uppercase;
+      padding: .35rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp .55s .1s forwards;
+    }
+    section#hero h1 {
+      font-size: clamp(2.1rem, 6vw, 4rem);
+      font-weight: 800; line-height: 1.13; letter-spacing: -1px;
+      max-width: 800px; margin-bottom: 1.25rem;
+      opacity: 0; animation: fadeUp .55s .25s forwards;
+    }
+    section#hero h1 span {
+      background: linear-gradient(135deg, #a5b4fc, #6366f1);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    section#hero p.hero-sub {
+      font-size: clamp(.95rem, 2.5vw, 1.15rem);
+      color: var(--muted); max-width: 580px; margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp .55s .4s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+      opacity: 0; animation: fadeUp .55s .55s forwards;
+    }
+    .scroll-hint {
+      position: absolute; bottom: 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: var(--muted); font-size: .75rem;
+      opacity: 0; animation: fadeUp .55s .8s forwards;
+    }
+    .scroll-hint svg { animation: bounce 1.9s ease-in-out infinite; }
+
+    /* Mobile Hero ≤768px */
+    @media (max-width: 768px) {
+      section#hero { padding: 6rem 1.25rem 4rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      section { padding: 4rem 1.25rem; }
+    }
+
+    /* ── FRAMEWORK SEKTION ── */
+    section#framework { background: var(--bg2); }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
-    @media (max-width: 1024px) { .cards { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px)  { .cards { grid-template-columns: 1fr; } }
+
+    /* Desktop ≥1024px: 3 Spalten */
+    @media (min-width: 1024px) {
+      .cards { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Tablet 769px–1023px: 2 Spalten */
+    @media (max-width: 1023px) and (min-width: 769px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Mobile ≤768px: 1 Spalte */
+    @media (max-width: 768px) {
+      .cards { grid-template-columns: 1fr; }
+    }
 
     .card {
       background: var(--bg3);
@@ -187,10 +200,9 @@
     }
     .card:hover { transform: translateY(-5px); border-color: rgba(99,102,241,.28); box-shadow: 0 14px 44px rgba(0,0,0,.35); }
     .card:hover::after { opacity: 1; }
-
-    .card.safe::after  { background: linear-gradient(90deg, #6366f1, #818cf8); }
-    .card.less::after  { background: linear-gradient(90deg, #10b981, #6ee7b7); }
-    .card.spot::after  { background: linear-gradient(90deg, #f59e0b, #fcd34d); }
+    .card.safe::after { background: linear-gradient(90deg, #6366f1, #818cf8); }
+    .card.less::after { background: linear-gradient(90deg, #10b981, #6ee7b7); }
+    .card.spot::after { background: linear-gradient(90deg, #f59e0b, #fcd34d); }
 
     .card-icon {
       width: 50px; height: 50px; border-radius: 12px;
@@ -202,17 +214,15 @@
     .spot .card-icon { background: rgba(245,158,11,.12); }
 
     .card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .3rem; }
-
     .card-tag {
       display: inline-block; font-size: .7rem; font-weight: 700;
       padding: .2rem .6rem; border-radius: 999px; margin-bottom: .9rem;
     }
-    .safe .card-tag { background: rgba(99,102,241,.15);  color: #a5b4fc; }
-    .less .card-tag { background: rgba(16,185,129,.12);  color: #6ee7b7; }
-    .spot .card-tag { background: rgba(245,158,11,.12);  color: #fcd34d; }
+    .safe .card-tag { background: rgba(99,102,241,.15); color: #a5b4fc; }
+    .less .card-tag { background: rgba(16,185,129,.12); color: #6ee7b7; }
+    .spot .card-tag { background: rgba(245,158,11,.12); color: #fcd34d; }
 
     .card p { color: var(--muted); font-size: .875rem; line-height: 1.65; margin-bottom: 1.2rem; }
-
     .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
     .chip {
       background: rgba(255,255,255,.05);
@@ -221,22 +231,27 @@
       color: var(--muted); padding: .18rem .55rem;
     }
 
-    /* ── BENEFITS ── */
-    #benefits { background: var(--bg); }
+    /* ── VORTEILE SEKTION ── */
+    section#benefits { background: var(--bg); }
 
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
-    @media (max-width: 1024px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 768px)  { .benefits-grid { grid-template-columns: 1fr; } }
+
+    @media (min-width: 1024px) {
+      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 1023px) and (min-width: 769px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
 
     .benefit {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
       transition: border-color .2s, transform .2s;
     }
     .benefit:hover { border-color: rgba(99,102,241,.28); transform: translateY(-3px); }
@@ -245,21 +260,24 @@
     .benefit p  { color: var(--muted); font-size: .855rem; line-height: 1.6; }
 
     /* ── CTA BANNER ── */
-    #cta { background: var(--bg2); }
+    section#cta { background: var(--bg2); }
     .cta-box {
       max-width: 680px; margin: 0 auto;
       background: linear-gradient(135deg, rgba(99,102,241,.14), rgba(129,140,248,.07));
       border: 1px solid rgba(99,102,241,.22);
-      border-radius: 20px;
-      padding: 3.5rem 2rem;
-      text-align: center;
+      border-radius: 20px; padding: 3.5rem 2rem; text-align: center;
     }
     .cta-box h2 { font-size: clamp(1.4rem, 3vw, 1.95rem); font-weight: 800; margin-bottom: .75rem; }
     .cta-box p  { color: var(--muted); margin-bottom: 2rem; font-size: .95rem; }
     .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    /* ── FOOTER ── */
-    footer {
+    @media (max-width: 768px) {
+      .cta-box { padding: 2.5rem 1.25rem; }
+      .cta-row { flex-direction: column; align-items: center; }
+    }
+
+    /* ── FOOTER SEKTION ── */
+    section#footer {
       background: var(--bg2);
       border-top: 1px solid var(--border);
       padding: 3rem 1.5rem;
@@ -283,8 +301,7 @@
 
     .footer-bottom {
       max-width: 1100px; margin: 2rem auto 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+      padding-top: 1.5rem; border-top: 1px solid var(--border);
       display: flex; flex-wrap: wrap; gap: 1rem;
       justify-content: space-between; align-items: center;
     }
@@ -293,9 +310,10 @@
     @media (max-width: 768px) {
       .footer-inner { flex-direction: column; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
+      section#footer { padding: 2.5rem 1.25rem; }
     }
 
-    /* ── ANIMATIONS ── */
+    /* ── ANIMATIONEN ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -304,7 +322,6 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(5px); }
     }
-
     .reveal {
       opacity: 0; transform: translateY(28px);
       transition: opacity .5s ease, transform .5s ease;
@@ -316,28 +333,29 @@
 
   <!-- NAVIGATION -->
   <nav aria-label="Hauptnavigation">
-    <a href="#hero" class="nav-logo">⬡ AgileOS</a>
+    <a href="#hero" class="nav-logo">&#11041; AgileOS</a>
     <ul class="nav-links">
-      <li><a href="#frameworks">Frameworks</a></li>
+      <li><a href="#framework">Frameworks</a></li>
       <li><a href="#benefits">Vorteile</a></li>
-      <li><a href="#cta">Kontakt</a></li>
+      <li><a href="#footer">Kontakt</a></li>
     </ul>
-    <a href="#frameworks" class="nav-cta">Jetzt starten →</a>
+    <a href="#framework" class="nav-cta">Jetzt starten &#8594;</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO SEKTION: id="hero" mit Headline, Subtext und CTA-Button -->
   <section id="hero" aria-labelledby="hero-headline">
-    <span class="badge">Agile Transformation · 2025</span>
+    <span class="badge">Agile Transformation &middot; 2025</span>
     <h1 id="hero-headline">
-      Skalierte Agilität mit<br />
+      Skalierte Agilitaet mit<br />
       <span>modernen Operating Models</span>
     </h1>
-    <p>
-      SAFe, LeSS, Spotify Model – verstehe die führenden Frameworks für agile
-      Organisationen und wähle das Modell, das zu deinem Unternehmen passt.
+    <p class="hero-sub">
+      SAFe, LeSS, Spotify Model &#8211; verstehe die fuehrenden Frameworks fuer agile
+      Organisationen und waehle das Modell, das zu deinem Unternehmen passt.
     </p>
+    <!-- CTA-Button mit definiertem href-Ziel -->
     <div class="hero-actions">
-      <a href="#frameworks" class="btn-primary">Frameworks entdecken</a>
+      <a href="#framework" class="btn-primary">Frameworks entdecken</a>
       <a href="#benefits" class="btn-outline">Vorteile ansehen</a>
     </div>
     <div class="scroll-hint" aria-hidden="true">
@@ -349,58 +367,206 @@
     </div>
   </section>
 
-  <!-- FRAMEWORKS -->
-  <section id="frameworks" aria-labelledby="frameworks-title">
+  <!-- FRAMEWORK SEKTION: id="framework" mit 3 Framework-Cards -->
+  <section id="framework" aria-labelledby="framework-title">
     <div class="container">
-      <p class="section-label reveal">Frameworks im Überblick</p>
-      <h2 class="section-title reveal" id="frameworks-title">
+      <p class="section-label reveal">Frameworks im Ueberblick</p>
+      <h2 class="section-title reveal" id="framework-title">
         Die drei wichtigsten<br />Skalierungsmodelle
       </h2>
       <p class="section-sub reveal">
-        Jedes Framework hat spezifische Stärken – abhängig von Unternehmensgröße,
+        Jedes Framework hat spezifische Staerken &#8211; abhaengig von Unternehmensgroesse,
         Kultur und strategischen Zielen.
       </p>
 
-      <div class="cards" id="framework-cards" role="list">
-        <!-- Cards werden per JS aus frameworks.json befüllt -->
+      <div class="cards" role="list">
+
+        <!-- Framework-Card 1: SAFe -->
+        <article class="card safe reveal" role="listitem" aria-label="SAFe">
+          <div class="card-icon" aria-hidden="true">&#127959;&#65039;</div>
+          <h3>SAFe</h3>
+          <span class="card-tag">Scaled Agile Framework</span>
+          <p>Das umfassendste Skalierungsframework am Markt. SAFe strukturiert grosse Organisationen in Agile Release Trains (ARTs) und synchronisiert Teams ueber gemeinsame PI-Plannings. Ideal fuer Konzerne mit komplexen Abhaengigkeiten und starkem Governance-Bedarf.</p>
+          <div class="chips" aria-label="Schluesselkonzepte">
+            <span class="chip">PI Planning</span>
+            <span class="chip">ART</span>
+            <span class="chip">Portfolio Mgmt</span>
+            <span class="chip">DevSecOps</span>
+          </div>
+        </article>
+
+        <!-- Framework-Card 2: LeSS -->
+        <article class="card less reveal" role="listitem" aria-label="LeSS">
+          <div class="card-icon" aria-hidden="true">&#129382;</div>
+          <h3>LeSS</h3>
+          <span class="card-tag">Large-Scale Scrum</span>
+          <p>LeSS uebertraegt Scrum konsequent auf viele Teams &#8211; mit minimalen Zusatzstrukturen. Ein einziger Product Backlog, ein Product Owner, ein Sprint. Weniger Overhead, mehr Fokus auf echte Agilitaet, Lernkultur und technische Exzellenz.</p>
+          <div class="chips" aria-label="Schluesselkonzepte">
+            <span class="chip">Scrum-basiert</span>
+            <span class="chip">Lean</span>
+            <span class="chip">Cross-functional</span>
+            <span class="chip">Einfachheit</span>
+          </div>
+        </article>
+
+        <!-- Framework-Card 3: Spotify Model -->
+        <article class="card spot reveal" role="listitem" aria-label="Spotify Model">
+          <div class="card-icon" aria-hidden="true">&#127925;</div>
+          <h3>Spotify Model</h3>
+          <span class="card-tag">Squad &middot; Tribe &middot; Chapter</span>
+          <p>Bekannt durch Squads, Tribes, Chapters und Guilds: Das Spotify Model betont Autonomie und Ausrichtung gleichzeitig. Kein starres Framework, sondern eine Organisationsphilosophie &#8211; inspirierend und anpassungsfaehig fuer innovative Unternehmen.</p>
+          <div class="chips" aria-label="Schluesselkonzepte">
+            <span class="chip">Squads</span>
+            <span class="chip">Tribes</span>
+            <span class="chip">Guilds</span>
+            <span class="chip">Autonomie</span>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS -->
+  <!-- VORTEILE SEKTION -->
   <section id="benefits" aria-labelledby="benefits-title">
     <div class="container">
-      <p class="section-label reveal">Warum Agilität im Großen?</p>
+      <p class="section-label reveal">Warum Agilitaet im Grossen?</p>
       <h2 class="section-title reveal" id="benefits-title">
-        Vorteile für deine Organisation
+        Vorteile fuer deine Organisation
       </h2>
       <p class="section-sub reveal">
         Richtig implementiert, entfalten agile Operating Models transformative
-        Wirkung auf Schnelligkeit, Qualität und Mitarbeiterzufriedenheit.
+        Wirkung auf Schnelligkeit, Qualitaet und Mitarbeiterzufriedenheit.
       </p>
 
       <div class="benefits-grid">
         <div class="benefit reveal">
-          <div class="benefit-icon">⚡</div>
+          <div class="benefit-icon">&#9889;</div>
           <h4>Schnellere Time-to-Market</h4>
-          <p>Kurze Iterationen und parallele Entwicklungsströme beschleunigen die Auslieferung neuer Funktionen erheblich.</p>
+          <p>Kurze Iterationen und parallele Entwicklungsstroeme beschleunigen die Auslieferung neuer Funktionen erheblich.</p>
         </div>
         <div class="benefit reveal">
-          <div class="benefit-icon">🔗</div>
+          <div class="benefit-icon">&#128279;</div>
           <h4>Bessere Abstimmung</h4>
-          <p>Gemeinsame Rituale und transparente Backlogs sorgen für Alignment zwischen Teams, Management und Strategie.</p>
+          <p>Gemeinsame Rituale und transparente Backlogs sorgen fuer Alignment zwischen Teams, Management und Strategie.</p>
         </div>
         <div class="benefit reveal">
-          <div class="benefit-icon">🧭</div>
+          <div class="benefit-icon">&#129517;</div>
           <h4>Klare Verantwortung</h4>
-          <p>Definierte Ownership-Strukturen reduzieren Silos und fördern eigenverantwortliches Handeln auf allen Ebenen.</p>
+          <p>Definierte Ownership-Strukturen reduzieren Silos und foerdern eigenverantwortliches Handeln auf allen Ebenen.</p>
         </div>
         <div class="benefit reveal">
-          <div class="benefit-icon">📈</div>
-          <h4>Skalierbare Qualität</h4>
-          <p>Built-in Quality und kontinuierliche Integration stellen sicher, dass Qualität mit dem Wachstum Schritt hält.</p>
+          <div class="benefit-icon">&#128200;</div>
+          <h4>Skalierbare Qualitaet</h4>
+          <p>Built-in Quality und kontinuierliche Integration stellen sicher, dass Qualitaet mit dem Wachstum Schritt haelt.</p>
         </div>
         <div class="benefit reveal">
-          <div class="benefit-icon">🌱</div>
+          <div class="benefit-icon">&#127807;</div>
           <h4>Lernende Organisation</h4>
-          <p>Retrospektiv
+          <p>Retrospektiven und Communities of Practice schaffen eine Kultur des kontinuierlichen Verbesserns.</p>
+        </div>
+        <div class="benefit reveal">
+          <div class="benefit-icon">&#128737;&#65039;</div>
+          <h4>Risikominimierung</h4>
+          <p>Iterative Lieferung und fruehe Validierung senken das Risiko grosser Fehlinvestitionen deutlich.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section id="cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2 id="cta-title">Bereit fuer deine agile Transformation?</h2>
+        <p>
+          Lass uns gemeinsam das passende Operating Model fuer dein Unternehmen
+          finden &#8211; von der Strategie bis zur Umsetzung.
+        </p>
+        <div class="cta-row">
+          <a href="mailto:kontakt@agileos.de" class="btn-primary">Kontakt aufnehmen</a>
+          <a href="#framework" class="btn-outline">Frameworks vergleichen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SEKTION: id="footer" mit Impressum- und Datenschutz-Link -->
+  <section id="footer" role="contentinfo" aria-label="Footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">&#11041; AgileOS</a>
+        <p>Wissen und Werkzeuge fuer moderne agile Organisationen &#8211; auf Deutsch.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Frameworks</h5>
+        <ul>
+          <li><a href="#framework">SAFe</a></li>
+          <li><a href="#framework">LeSS</a></li>
+          <li><a href="#framework">Spotify Model</a></li>
+          <li><a href="#framework">Nexus</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Ressourcen</h5>
+        <ul>
+          <li><a href="#benefits">Vorteile</a></li>
+          <li><a href="mailto:kontakt@agileos.de">Newsletter</a></li>
+          <li><a href="mailto:kontakt@agileos.de">Whitepaper</a></li>
+          <li><a href="mailto:kontakt@agileos.de">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="mailto:kontakt@agileos.de">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&#169; 2025 AgileOS. Alle Rechte vorbehalten.</p>
+      <p>Mit &#10084;&#65039; fuer agile Teams gebaut.</p>
+    </div>
+  </section>
+
+  <script>
+    // Scroll-Reveal via IntersectionObserver
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() {
+            entry.target.classList.add('visible');
+          }, i * 90);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    // Aktiver Nav-Link beim Scrollen
+    var pageSections = document.querySelectorAll('section[id]');
+    var navAnchors   = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', function() {
+      var current = '';
+      pageSections.forEach(function(sec) {
+        if (window.scrollY >= sec.offsetTop - 130) {
+          current = sec.id;
+        }
+      });
+      navAnchors.forEach(function(a) {
+        a.style.color = (a.getAttribute('href') === ('#' + current)) ? 'var(--text)' : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+</html>
