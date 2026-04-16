@@ -1,28 +1,22 @@
 [
   {
     "id": "safe",
-    "cssClass": "safe",
     "name": "SAFe",
     "tag": "Scaled Agile Framework",
-    "icon": "🏗️",
-    "description": "Das umfassendste Skalierungsframework am Markt. SAFe strukturiert grosse Organisationen in Agile Release Trains und synchronisiert Teams ueber gemeinsame PI-Plannings. Ideal fuer Konzerne mit komplexen Abhaengigkeiten.",
+    "description": "Das umfassendste Skalierungsframework am Markt. SAFe strukturiert grosse Organisationen in Agile Release Trains und synchronisiert Teams ueber gemeinsame PI-Plannings. Ideal fuer Konzerne mit komplexen Abhaengigkeiten und starkem Governance-Bedarf.",
     "chips": ["PI Planning", "ART", "Portfolio Mgmt", "DevSecOps"]
   },
   {
     "id": "less",
-    "cssClass": "less",
     "name": "LeSS",
     "tag": "Large-Scale Scrum",
-    "icon": "🪶",
     "description": "LeSS uebertraegt Scrum konsequent auf viele Teams mit minimalen Zusatzstrukturen. Ein Product Backlog, ein Product Owner, ein Sprint. Weniger Overhead, mehr echte Agilitaet und technische Exzellenz.",
     "chips": ["Scrum-basiert", "Lean", "Cross-functional", "Einfachheit"]
   },
   {
     "id": "spotify",
-    "cssClass": "spot",
     "name": "Spotify Model",
-    "tag": "Squad · Tribe · Chapter",
-    "icon": "🎵",
+    "tag": "Squad Tribe Chapter",
     "description": "Bekannt durch Squads, Tribes, Chapters und Guilds: Das Spotify Model betont Autonomie und Ausrichtung gleichzeitig. Eine Organisationsphilosophie fuer innovative, wachsende Unternehmen.",
     "chips": ["Squads", "Tribes", "Guilds", "Autonomie"]
   }
